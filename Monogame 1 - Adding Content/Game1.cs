@@ -11,7 +11,7 @@ namespace Monogame_1___Adding_Content
 
         Rectangle window;
 
-        Texture2D dinoTexture, rickTexture;
+        Texture2D dinoTexture, rickTexture, backgroundTexture,purpleplanetTexure;
 
         Vector2 dinoLoction;
         public Game1()
@@ -44,6 +44,9 @@ namespace Monogame_1___Adding_Content
             // TODO: use this.Content to load your game content here
             dinoTexture = Content.Load<Texture2D>("dino");
             rickTexture = Content.Load<Texture2D>("rick");
+            backgroundTexture = Content.Load<Texture2D>("Background");
+            purpleplanetTexure = Content.Load<Texture2D>("purpleplanet");
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -62,10 +65,12 @@ namespace Monogame_1___Adding_Content
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
+            _spriteBatch.Draw(backgroundTexture, new Vector2(0, 0), Color.White);
+            _spriteBatch.Draw(purpleplanetTexure, new Vector2(10, 10), Color.White);
+            //_spriteBatch.Draw(dinoTexture, new Vector2(10, 10), Color.White);
+            ////_spriteBatch.Draw(dinoTexture, new Vector2(350, 195), Color.Red);
+            //_spriteBatch.Draw(rickTexture, new Vector2(410, 200), Color.White);
 
-            _spriteBatch.Draw(dinoTexture, new Vector2(10, 10), Color.White);
-            _spriteBatch.Draw(dinoTexture, new Vector2(350, 195), Color.Red);
-            _spriteBatch.Draw(rickTexture, new Vector2(410, 200), Color.White);
 
             _spriteBatch.End();
 
